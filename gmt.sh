@@ -1,8 +1,8 @@
 #!/bin/sh
 
 PROGNAME="$(basename $0)"
-DOCKER_GMT_VERSION=${DOCKER_GMT_VERSION-latest}
-DOCKER_GMT_IMAGE_NAME=${DOCKER_GMT_IMAGE_NAME-nc5ng/gmt}
+DOCKER_GMT_VERSION=latest
+DOCKER_GMT_IMAGE_NAME=local/gmt-dev
 
 error(){
     error_code=$1

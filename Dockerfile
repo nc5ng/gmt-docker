@@ -1,12 +1,17 @@
-from ubuntu:16.04
+FROM ubuntu:16.04
 
 LABEL maintainer="akshmakov@nc5ng.org"
 
 WORKDIR /workspace
-ENV DCW_VERSION=1.1.3 GSHHG_VERSION=2.3.7 GMT_BRANCH=trunk 
-COPY install.sh /workspace
+
+COPY install.sh /opt/gmt/install.sh
 
 ## Do This in One Go to Minimize Docker Image Size
+ARG GSSHG_VERSION
+ARG DCW_VERSION
+ARG GMT_BRANCH
+ARG GMT_CMAKE_ARGS
+ENV GSSHG_VERSION=${GSSHG_VERSION:-2.3.7} DCW_VERSION=${DCW_VERSION:-1.1.3} GMT_BRANCH=${GMT_BRANCH:-trunk} GMT_CMAKE_ARGS=${GMT_CMAKE_ARGS:-""}
 
 RUN apt-get update -y && \
     apt-get install -y \
@@ -27,8 +32,7 @@ RUN apt-get update -y && \
 	    libblas-dev \
 	    graphicsmagick \
 	    wget &&\
-    ./install.sh && \
-    rm -rf /workspace && \
+    (cd /opt/gmt && ./install.sh) && \
     rm -rf /var/lib/apt/lists/*
 
 ENTRYPOINT ["/usr/local/bin/gmt"]

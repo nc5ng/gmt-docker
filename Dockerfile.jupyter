@@ -1,0 +1,16 @@
+FROM nc5ng/gmt:latest
+
+LABEL maintainer="akshmakov@nc5ng.org"
+
+RUN apt-get update && \
+    apt-get install -y	python3.5 \
+    	    	    	python3-pip \
+		    	git && \ 
+    rm -rf /var/lib/apt/lists/*
+	    
+COPY requirements-jupyter.txt /requirements.txt
+
+RUN pip3 install --upgrade pip && pip3 install -r /requirements.txt 
+
+ENTRYPOINT [ "/usr/local/bin/jupyter" ]
+CMD [ "notebook",  "--allow-root" , "--port=8888", "--ip=0.0.0.0" ]
