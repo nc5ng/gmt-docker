@@ -13,9 +13,6 @@ Instructions Adapted from [GMT Wiki](http://gmt.soest.hawaii.edu/projects/gmt/wi
 
 ## Usage: Command Line Wrapper
 
-The convenience script `gmt.sh` can be installed anywhere in path in order to simplify usage. By doing so, containerized versions of `GMT` can be run as though they are local.
-
-
 ```sh
 $ git clone https://github.com/nc5ng/gmt-docker
 
@@ -37,12 +34,14 @@ $ gmt --version
 
 Docker Container Images are available https://hub.docker.com/r/nc5ng/gmt
 
-The following tags are provided
+The following tags are provided.
 
-- `latest` default image for standard arch with latest gmt upstream
-- `python` default image for python gmt toolkit [`gmt-python`]( https://github.com/GenericMappingTools/gmt-python).
-- `jupyter`  enchanced `python` image with jupyter online notebook. 
 
+- `latest` Latest gmt upstream trunk code (updated regularly, but, not on every commit)
+- `python` `latest` with  python gmt toolkit [`gmt-python`]( https://github.com/GenericMappingTools/gmt-python).
+- `jupyter`  enchanced `python` image with jupyter online notebook, same version of gmt as `latest`. 
+- `6`, `6-python`, `6-jupyter` more stable images featuring 6.0 builds
+- `6.0.0_r20469`, `6.0.0_r20469-python`, `6.0.0_r20469-jupyter`, ... Fixed tags for specific versions and build numbers (Never Updated)
 
 
 ### Basic Usage
