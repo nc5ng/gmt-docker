@@ -14,3 +14,5 @@ RUN pip3 install --upgrade pip==9.0.3 && pip3 install -r /requirements.txt
 
 ENTRYPOINT [ "/usr/local/bin/jupyter" ]
 CMD [ "notebook",  "--allow-root" , "--port=8888", "--ip=0.0.0.0" ]
+
+ADD ./Example.ipynb /workspace
