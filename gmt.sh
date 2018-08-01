@@ -2,7 +2,7 @@
 
 PROGNAME="$(basename $0)"
 DOCKER_GMT_VERSION=latest
-DOCKER_GMT_IMAGE_NAME=local/gmt-dev
+DOCKER_GMT_IMAGE_NAME=nc5ng/gmt
 
 error(){
     error_code=$1
