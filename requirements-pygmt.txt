@@ -1,2 +1,2 @@
-git+git://github.com/GenericMappingTools/gmt-python
+git+git://github.com/nc5ng/gmt-python@c539b627305756431acdef73ff266522c96b8880
 ipython
