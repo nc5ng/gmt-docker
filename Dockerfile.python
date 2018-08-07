@@ -8,8 +8,9 @@ RUN apt-get update && \
 		    	git && \ 
     rm -rf /var/lib/apt/lists/*
 	    
-COPY requirements-pygmt.txt /requirements.txt
+COPY requirements-python-base.txt /requirements.txt
 
+#Fix Pip version due  to upstream error with pip 18.0
 RUN pip3 install --upgrade pip==9.0.3 && pip3 install -r /requirements.txt 
 
 ENTRYPOINT  [ "/usr/local/bin/ipython" ]
