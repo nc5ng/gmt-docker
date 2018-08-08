@@ -1,2 +1,2 @@
-git+git://github.com/nc5ng/gmt-python@c539b627305756431acdef73ff266522c96b8880
+git+git://github.com/nc5ng/gmt-python@f208f2ee2f154b1e29bed477af62c15befc93af7
 ipython
